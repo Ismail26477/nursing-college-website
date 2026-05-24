@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parent Hospital Facilities</title>
+  <style>
+   body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1e3a8a;
+      margin-bottom: 30px;
+    }
+
+    .text-section {
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+    }
+
+    .text-section p {
+      color: #333;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      border-radius: 12px;
+      object-fit: cover;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+    p {
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Parent Hospital Facilities</h1>
+    <div class="facilities">
+      <div class="text-section">
+        <p>
+          Our parent hospital is a well-established medical institution offering extensive facilities and services to support both clinical education and patient care. Students benefit from hands-on training in real hospital settings, gaining exposure to multiple departments including general medicine, surgery, and more. The hospital is equipped with modern infrastructure, cutting-edge diagnostic tools, and experienced healthcare professionals who guide and mentor the students during their clinical postings.
+        </p>
+      </div>
+      <div class="gallery">
+        <img src="hospital-pic1.jpeg" alt="Hospital Image 1">
+        <img src="hospital-pic2.jpeg" alt="Hospital Image 2">
+        <img src="hospital-pic3.jpeg" alt="Hospital Image 3">
+        <img src="hospital-pic4.jpeg" alt="Hospital Image 4">
+        <img src="hospital-pic5.jpg" alt="Hospital Image 5">
+        <img src="hospital-pic6.jpg" alt="Hospital Image 6">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
