@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery - Dr. R.N. Lahoti College of Nursing</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Segoe UI',sans-serif;
+      background:#f5f7fb;
+      color:#1b1b1b;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    /* LOGO */
+    .logo-container{
+      background:#1e3a8a;
+      padding:25px 15px;
+      text-align:center;
+    }
+
+    .logo{
+      color:#fff;
+      font-size:2rem;
+      font-weight:700;
+    }
+
+    /* NAVBAR */
+    .navbar{
+      background:#1e3a8a;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:10px;
+      position:relative;
+    }
+
+    .menu-toggle{
+      display:none;
+      font-size:28px;
+      color:#fff;
+      cursor:pointer;
+    }
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .nav-links a,
+    .dropdown button{
+      color:#fff;
+      background:none;
+      border:none;
+      padding:12px 16px;
+      font-size:15px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover,
+    .dropdown button:hover{
+      background:rgba(255,255,255,0.15);
+      border-radius:6px;
+    }
+
+    /* DROPDOWN */
+    .dropdown{
+      position:relative;
+    }
+
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      min-width:220px;
+      background:#fff;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+      z-index:999;
+    }
+
+    .dropdown-content a{
+      color:#1b1b1b;
+      display:block;
+      padding:12px 16px;
+      border-bottom:1px solid #eee;
+    }
+
+    .dropdown-content a:hover{
+      background:#f2f2f2;
+    }
+
+    .dropdown:hover .dropdown-content{
+      display:block;
+    }
+
+    /* GALLERY */
+    .gallery-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+      padding:30px 20px;
+      align-items:start;
+    }
+
+    .gallery-link{
+      color:inherit;
+    }
+
+    .gallery-item{
+      background:#fff;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 4px 12px rgba(0,0,0,0.12);
+      transition:0.3s ease;
+      height:100%;
+    }
+
+    .gallery-item:hover{
+      transform:translateY(-6px);
+      box-shadow:0 10px 24px rgba(0,0,0,0.18);
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:340px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .gallery-caption{
+      padding:16px;
+      text-align:center;
+      font-size:1.1rem;
+      font-weight:600;
+      background:#f7f7f7;
+    }
+
+    /* FOOTER */
+    .combined-footer{
+      background:#0F52BA;
+      color:#fff;
+      padding:50px 20px 20px;
+      margin-top:30px;
+    }
+
+    .footer-logo{
+      text-align:center;
+      margin-bottom:25px;
+    }
+
+    .footer-logo img{
+      height:100px;
+    }
+
+    .footer-container{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:30px;
+    }
+
+    .footer-about,
+    .footer-links,
+    .footer-contact{
+      flex:1 1 250px;
+    }
+
+    .footer-container h3,
+    .footer-container h4{
+      margin-bottom:15px;
+    }
+
+    .footer-container p,
+    .footer-container li,
+    .footer-container a{
+      color:#f1f1f1;
+      line-height:1.7;
+      font-size:0.95rem;
+    }
+
+    .footer-links ul{
+      list-style:none;
+    }
+
+    .footer-links a:hover{
+      color:gold;
+    }
+
+    .footer-bottom{
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,0.3);
+      margin-top:30px;
+      padding-top:15px;
+      font-size:0.9rem;
+    }
+
+    /* MOBILE */
+    @media(max-width:768px){
+
+      .logo{
+        font-size:1.4rem;
+      }
+
+      .menu-toggle{
+        display:block;
+        margin-left:auto;
+      }
+
+      .nav-links{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        background:#1e3a8a;
+      }
+
+      .nav-links.show{
+        display:flex;
+      }
+
+      .nav-links a,
+      .dropdown button{
+        width:100%;
+        text-align:center;
+      }
+
+      .dropdown-content{
+        position:static;
+        width:100%;
+        border-radius:0;
+        box-shadow:none;
+      }
+
+      .gallery-item img{
+        height:260px;
+      }
+
+      .footer-container{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .footer-logo img{
+        height:80px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LOGO -->
+  <div class="logo-container">
+    <div class="logo">Dr. R.N. Lahoti College of Nursing</div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+
+    <nav class="nav-links" id="nav-links">
+
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+
+      <div class="dropdown">
+        <button>Courses ▼</button>
+        <div class="dropdown-content">
+          <a href="BSC.html">BSC Nursing</a>
+          <a href="PBSC.html">PBBSC Nursing</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button>Department ▼</button>
+        <div class="dropdown-content">
+          <a href="child-health-nursing.html">Child Health Nursing</a>
+          <a href="community-nursing.html">Community Health Nursing</a>
+          <a href="medical-nursing.html">Medical Surgical Nursing</a>
+          <a href="OBG.html">OBG Nursing</a>
+          <a href="mental-health.html">Mental Health Nursing</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button>Facilities ▼</button>
+        <div class="dropdown-content">
+          <a href="library.html">Library</a>
+          <a href="fundamental-lab.html">Labs</a>
+          <a href="classroom.html">Classroom</a>
+          <a href="bus.html">Bus Facilities</a>
+          <a href="hostel.html">Hostel</a>
+        </div>
+      </div>
+
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact Us</a>
+
+    </nav>
+
+  </header>
+
+  <!-- GALLERY -->
+  <div class="gallery-container">
+
+    <a href="sir-birthday-2024.html" class="gallery-link">
+      <div class="gallery-item">
+        <img src="birthday-2024.html/main1.jpeg" alt="">
+        <div class="gallery-caption">
+          President Sir's Birthday
+        </div>
+      </div>
+    </a>
+
+    <a href="staff-perm.html" class="gallery-link">
+      <div class="gallery-item">
+        <img src="staff-function/main.jpeg" alt="">
+        <div class="gallery-caption">
+          Staff Performance 2024
+        </div>
+      </div>
+    </a>
+
+    <a href="anuual-day-2024.html" class="gallery-link">
+      <div class="gallery-item">
+        <img src="annual-2024/main.jpeg" alt="">
+        <div class="gallery-caption">
+          Annual Function 2024
+        </div>
+      </div>
+    </a>
+
+    <a href="hostel-facilities.html" class="gallery-link">
+      <div class="gallery-item">
+        <img src="hostel/pic2.jpeg" alt="">
+        <div class="gallery-caption">
+          Hostel Facilities
+        </div>
+      </div>
+    </a>
+
+    <a href="day-cel.html" class="gallery-link">
+      <div class="gallery-item">
+        <img src="day-cel.jpeg" alt="">
+        <div class="gallery-caption">
+          IMP Day Celebration's
+        </div>
+      </div>
+    </a>
+
+    <a href="lamp-2025.html" class="gallery-link">
+      <div class="gallery-item">
+        <img src="Lamp-Lighting-2025/main.jpeg" alt="">
+        <div class="gallery-caption">
+          Lamp Lighting 2025
+        </div>
+      </div>
+    </a>
+
+    <a href="nurses-day.html" class="gallery-link">
+      <div class="gallery-item">
+        <img src="nurses-day/pic5.jpeg" alt="">
+        <div class="gallery-caption">
+          Nurse's Day 2026
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="combined-footer">
+
+    <div class="footer-logo">
+      <img src="Logo.jpg" alt="">
+    </div>
+
+    <div class="footer-container">
+
+      <div class="footer-about">
+        <h3>Dr. R.N. Lahoti College of Nursing</h3>
+
+        <p>
+          Empowering future healthcare heroes through excellence in nursing education and compassionate care.
+        </p>
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Quick Links</h4>
+
+        <ul>
+          <li><a href="#">Admissions</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Departments</a></li>
+          <li><a href="#">Student Support</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-contact">
+
+        <h4>Contact Us</h4>
+
+        <p>
+          Jalna Road, Sultanpur,<br>
+          Lonar (Tq), Buldhana 443302
+        </p>
+
+        <p>
+          Email: drnlbscnursing@gmail.com
+        </p>
+
+        <p>
+          Phone: +91 9071718888
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 Dr. R.N. Lahoti College of Nursing. All rights reserved.
+    </div>
+
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+
+  </script>
+
+</body>
+</html>

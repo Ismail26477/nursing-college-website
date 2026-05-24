@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nursing Departments</title>
+  <link rel="stylesheet" href="bsc.css" />
+</head>
+<body>
+  <header>
+    <h1>Nursing Departments</h1>
+  </header>
+
+  <main class="container">
+    <section class="department-options">
+      <ul class="department-list">
+        <li><a href="child-health-nursing.html" onclick="showContent('pediatric')">&#9656; Child (Pediatric) Health Nursing</a></li>
+        <li><a href="javascript:void(0);" onclick="showContent('community')">&#9656; Community Health Nursing</a></li>
+        <li><a href="javascript:void(0);" onclick="showContent('surgical')">&#9656; Medical Surgical Nursing</a></li>
+        <li><a href="javascript:void(0);" onclick="showContent('obg')">&#9656; OBG Nursing</a></li>
+        <li><a href="javascript:void(0);" onclick="showContent('mental')">&#9656; Mental (Psychiatric) Health Nursing</a></li>
+        <li><a href="javascript:void(0);" onclick="showContent('foundation')">&#9656; Nursing Foundation</a></li>
+      </ul>
+    </section>
+
+    <section id="content-section" class="content-container">
+      <div id="pediatric" class="content-section">
+        <h2>Child (Pediatric) Health Nursing</h2>
+        <p>Child Health Nursing provides training to nurses who specialize in pediatric care, focusing on the medical and psychological needs of children and adolescents.</p>
+        <ul>
+          <li>Neonatal Care</li>
+          <li>Childhood Immunization</li>
+          <li>Common Pediatric Diseases</li>
+          <li>Developmental Milestones</li>
+          <li>Pediatric Emergencies and Trauma</li>
+        </ul>
+      </div>
+
+      <div id="community" class="content-section">
+        <h2>Community Health Nursing</h2>
+        <p>Community Health Nursing focuses on health care delivery to underserved populations, health education, and disease prevention within a community.</p>
+        <ul>
+          <li>Primary Health Care</li>
+          <li>Health Education and Promotion</li>
+          <li>Maternal and Child Health</li>
+          <li>Public Health Research</li>
+          <li>Community-Based Care</li>
+        </ul>
+      </div>
+
+      <div id="surgical" class="content-section">
+        <h2>Medical Surgical Nursing</h2>
+        <p>This department focuses on the care of patients undergoing surgery and their recovery, preparing nurses for various medical and surgical procedures.</p>
+        <ul>
+          <li>Preoperative Care</li>
+          <li>Postoperative Care</li>
+          <li>Emergency Care</li>
+          <li>Surgical Nursing Techniques</li>
+          <li>Critical Care and Trauma</li>
+        </ul>
+      </div>
+
+      <div id="obg" class="content-section">
+        <h2>OBG Nursing</h2>
+        <p>OBG Nursing focuses on maternal and child health, particularly prenatal, postnatal, and gynecological care, preparing nurses for delivery and reproductive health care.</p>
+        <ul>
+          <li>Pregnancy and Childbirth Care</li>
+          <li>Gynecological Disorders</li>
+          <li>Family Planning</li>
+          <li>Neonatal Care</li>
+          <li>Women’s Health and Wellbeing</li>
+        </ul>
+      </div>
+
+      <div id="mental" class="content-section">
+        <h2>Mental (Psychiatric) Health Nursing</h2>
+        <p>This department focuses on mental health care, equipping nurses with the skills to care for individuals experiencing psychiatric disorders.</p>
+        <ul>
+          <li>Psychiatric Care and Therapy</li>
+          <li>Crisis Management</li>
+          <li>Mental Health Rehabilitation</li>
+          <li>Community Mental Health Care</li>
+          <li>Psychiatric Nursing Ethics</li>
+        </ul>
+      </div>
+
+      <div id="foundation" class="content-section">
+        <h2>Nursing Foundation</h2>
+        <p>The Nursing Foundation department provides the essential knowledge and skills needed for a career in nursing, including basic care and ethical practices.</p>
+        <ul>
+          <li>Introduction to Nursing</li>
+          <li>Patient Care Fundamentals</li>
+          <li>Nursing Ethics and Communication</li>
+          <li>Medical Terminology</li>
+          <li>Health Assessment and Record Keeping</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function showContent(department) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(function(section) {
+        section.style.display = 'none';
+      });
+
+      // Show the selected department content
+      const content = document.getElementById(department);
+      content.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

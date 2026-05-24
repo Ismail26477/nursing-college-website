@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library – Dr. R.N. Lahoti College of Nursing</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+    font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+p {
+      text-align: justify;
+    }
+
+header {
+  background-color: #274bc1;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+main {
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Logo Section */
+.logo-container {
+    text-align: center;
+    background-color:#274bc1;
+    padding: 30px 0;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    color:#f8f9fa;
+    font-weight: bold;
+  }
+  
+/* NAVBAR CONTAINER */
+.navbar {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 1rem 1.5rem;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* BRAND */
+.navbar .brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* HAMBURGER ICON */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* NAV LINKS (Single Row) */
+.nav-links {
+  display: flex;
+  /* gap: 1rem; */
+  align-items: center;
+}
+
+.nav-links a,
+.nav-links .dropdown > button {
+  color: white;
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Hover effect */
+.nav-links a:hover,
+.nav-links .dropdown > button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  color: black;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: black;
+  transition: background 0.2s;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Arrow */
+.dropdown > button::after {
+  content: ' ▼';
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background-color: #1e3a8a;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    padding: 1rem 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a,
+  .nav-links .dropdown > button {
+    width: 100%;
+    text-align: left;
+    justify-content: space-between;
+    padding: 12px 1.5rem;
+  }
+
+  .dropdown-content {
+    position: static;
+    background-color: #f1f1f1;
+    box-shadow: none;
+    border-radius: 0;
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    color: #1e3a8a;
+  }
+}
+
+.combined-footer {
+    background-color: #0F52BA;
+    color: #fff;
+    padding: 40px 20px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+  }
+  
+  .footer-logo img {
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    text-align: left;
+  }
+  
+  .footer-about,
+  .footer-links,
+  .footer-contact {
+    flex: 1 1 250px;
+    min-width: 220px;
+  }
+  
+  .footer h3,
+  .footer h4 {
+    color: #fff;
+    margin-bottom: 15px;
+  }
+  
+  .footer p,
+  .footer li,
+  .footer a {
+    font-size: 0.95rem;
+    color: #f1f1f1;
+    line-height: 1.6;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links ul li a:hover {
+    color: #ffd700;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+    font-size: 0.85rem;
+  }
+  
+  /* 🔄 Responsive for mobile devices */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-about,
+    .footer-links,
+    .footer-contact {
+      flex: 1 1 100%;
+      margin-bottom: 20px;
+    }
+  
+    .footer-logo img {
+      height: 80px;
+    }
+  }
+  
+
+
+    .page-banner {
+      background: url('library-banner.jpg') no-repeat center center/cover;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .page-banner h1 {
+      font-size: 2.5rem;
+      background-color: rgba(0,0,0,0.4);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    .library-section {
+      padding: 40px 20px;
+      background-color: #f9f9f9;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .library-section h2 {
+      color: #0F52BA;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .library-section p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    .library-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .library-gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .library-gallery img:hover {
+      transform: scale(1.05);
+    }
+    p {
+      text-align: justify;
+    }
+
+    .footer {
+      background-color: #0F52BA;
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .footer p {
+      margin: 5px 0;
+    }
+
+    @media (max-width: 768px) {
+      .college-logo {
+        height: 80px;
+      }
+
+      .page-banner h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <div class="logo">Dr. R.N. Lahoti College of Nursing</div>
+  </div>
+  
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+
+      <!--Course-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Courses</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="BSC.html">BSC Nursing</a>
+          <a href="PBSC.html">PBBSC Nursing</a>
+        </div>
+      </div>
+
+      <!-- Department -->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('department')">Department</button>
+        <div class="dropdown-content" id="department">
+          <a href="child-health-nursing.html">Child-health-nursing</a>
+          <a href="community-nursing.html">Community Health Nursing</a>
+          <a href="medical-nursing.html">Medical Surgical Nursing</a>
+          <a href="OBG.html">OBG Nursing</a>
+          <a href="mental-health.html">Mental Health Nursing</a>
+          
+        </div>
+      </div>
+
+      <!-- Admission -->
+     
+      <div class="dropdown">
+        <button onclick="toggleDropdown('admission')">Admission</button>
+        <div class="dropdown-content" id="admission">
+          <a href="admission-bsc.html">Bsc</a>
+          <a href="admission-pb.html">PB.Bsc</a>
+        </div>
+      </div>
+  
+
+      <!-- Facilities -->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Facilities</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="library.html">Library</a>
+          <a href="fundamental-lab.html">Labs</a>
+          <a href="classroom.html">Classroom</a>
+          <a href="bus.html">Bus Facilities</a>
+          <a href="hostel.html">Hostel</a>
+          <a href="parent-hoapitL.html">Parent-Hospital</a>
+        </div>
+      </div>
+
+       <!--Student Support-->
+       <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Student Support</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="anti-rag.html">Anti-Ragging Committee </a>
+          <a href="discipline.html">Disciplinary Committee</a>
+          <a href="internal-complains.html">Internal Complaints Committee</a>
+          <a href="employ.html">Employee Grievance Redressal Committee</a>
+        </div>
+      </div>
+
+
+
+      <a href="gallery.html">Gallery</a>
+      <a href="#">IQAC</a>
+
+
+      <!--IMP Links-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">IMP Link</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="https://www.muhs.ac.in/">MUHS </a>
+          <a href="https://maharashtranursingcouncil.org/">Maharashtra Nursing Council</a>
+        </div>
+      </div>
+
+
+      <!--MUHS-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">MUHS Mandate</button>
+        <div class="dropdown-content" id="facilities">
+         <a href="2026-2027.html">2026-2027</a>
+          <a href="2025-2026.html">2025-2026</a>
+          <a href="2024.html">2024-2025</a>
+        </div>
+      </div>
+
+
+
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <h1>Library</h1>
+  </section>
+
+  <!-- Library Content -->
+  <section class="library-section">
+    <h2>About Our Library</h2>
+    <p>Our college library is a vital resource hub that supports the academic and research needs of students and faculty. The library is well-stocked with an extensive collection of nursing textbooks, reference books, journals, and online resources to enhance learning outcomes.</p>
+    <p>It provides a quiet, student-friendly environment for study and research, with access to e-books, academic journals, and digital databases. The library is equipped with computers, Wi-Fi, photocopying, and printing facilities. Separate reading spaces are provided for students and faculty.</p>
+    <p>The library is continuously updated with the latest editions and reference materials in nursing and healthcare to ensure students are equipped with current knowledge.</p>
+
+    <!-- Library Gallery -->
+    <div class="library-gallery">
+      <img src="IMG-20250417-WA0004.jpg" alt="Library View 1">
+      <img src="IMG-20250417-WA0005.jpg" alt="Library View 2">
+      <!-- <img src="lib3.jpg" alt="Library View 3"> -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="combined-footer">
+    <div class="footer-logo">
+      <img src="Logo.jpg" alt="Dr. R.N. Lahoti College of Nursing Logo">
+    </div>
+  
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Dr. R.N. Lahoti College of Nursing</h3>
+        <p>Empowering future healthcare heroes through excellence in nursing education and compassionate care.</p>
+      </div>
+  
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Admissions</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Departments</a></li>
+          <li><a href="#">Student Support</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><strong>Address:</strong> Jalna Road, Sultanpur,<br>
+        Lonar (Tq), <br>Buldhana 443 302</p><br>
+        <p><strong>Email:</strong> drnlbscnursing@gmail.com</p><br>
+        <p><strong>Phone:</strong> +91 9071718888</p>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 Dr. R.N. Lahoti College of Nursing. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+<script>
+
+  const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-links");
+  
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+  
+    // Fix: Close dropdowns when tapping outside
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".dropdown")) {
+        document.querySelectorAll(".dropdown").forEach(drop => {
+          drop.classList.remove("show-dropdown");
+        });
+      }
+    });
+  
+    // Dropdown toggle function
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      const parent = dropdown.parentElement;
+      parent.classList.toggle("show-dropdown");
+    }
+  
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest(".dropdown")) {
+        document.querySelectorAll(".dropdown-content").forEach((el) => {
+          el.classList.remove("show-dropdown");
+        });
+      }
+    });
+  
+  
+    let slideIndex = 0;
+  
+    function showSlides() {
+      const slides = document.getElementsByClassName("custom-slides");
+  
+      // Hide all slides
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+  
+      // Move to the next slide
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+  
+      // Display the current slide
+      slides[slideIndex - 1].style.display = "block";
+  
+      // Repeat every 4 seconds
+      setTimeout(showSlides, 4000);
+    }
+  
+    // Start the slider after page load
+    document.addEventListener("DOMContentLoaded", showSlides);
+  </script>

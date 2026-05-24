@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Academic Institution</title>
+  <link rel="stylesheet" href=".css" />
+  <style>
+    /* Color palette */
+:root {
+    --primary-color: #274bc1;
+    --text-color: #1B1B1B;
+    --bg-color: #F5F9FF;
+    --white: #FFFFFF;
+  }
+  
+  /* Reset and base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  p {
+      text-align: justify;
+    }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color:#F5F9FF;
+    color: var(--text-color);
+  }
+
+  header {
+  background-color: #274bc1;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+  
+  /* Logo Section */
+  .logo-container {
+    text-align: center;
+    background-color: #274bc1;
+    padding: 30px 0;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    color: var(--white);
+    font-weight: bold;
+  }
+  
+/* NAVBAR CONTAINER */
+.navbar {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 1rem 1.5rem;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* BRAND */
+.navbar .brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* HAMBURGER ICON */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* NAV LINKS (Single Row) */
+.nav-links {
+  display: flex;
+  /* gap: 1rem; */
+  align-items: center;
+}
+
+.nav-links a,
+.nav-links .dropdown > button {
+  color: white;
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Hover effect */
+.nav-links a:hover,
+.nav-links .dropdown > button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  color: black;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: black;
+  transition: background 0.2s;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Arrow */
+.dropdown > button::after {
+  content: ' ▼';
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background-color: #1e3a8a;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    padding: 1rem 0;
+    z-index: 999;
+    align-items: center; /* Center items */
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a,
+  .nav-links .dropdown > button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 12px 1.5rem;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: static;
+    background-color: #f1f1f1;
+    box-shadow: none;
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown.show-dropdown .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    color: #1e3a8a;
+    padding: 10px 0;
+    display: block;
+  }
+}
+
+
+.footer-logo img {
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    text-align: left;
+  }
+  
+  .footer-about,
+  .footer-links,
+  .footer-contact {
+    flex: 1 1 250px;
+    min-width: 220px;
+  }
+  
+  .footer h3,
+  .footer h4 {
+    color: #fff;
+    margin-bottom: 15px;
+  }
+  
+  .footer p,
+  .footer li,
+  .footer a {
+    font-size: 0.95rem;
+    color: #f1f1f1;
+    line-height: 1.6;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links ul li a:hover {
+    color: #ffd700;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+    font-size: 0.85rem;
+  }
+  
+  /* 🔄 Responsive for mobile devices */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-about,
+    .footer-links,
+    .footer-contact {
+      flex: 1 1 100%;
+      margin-bottom: 20px;
+    }
+  
+    .footer-logo img {
+      height: 80px;
+    }
+  }
+  
+    main {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #1e3a8a;
+      margin-top: 2rem;
+    }
+
+    .main-box {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+      gap: 2rem;
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .pic {
+      flex: 1 1 30%;
+      text-align: center;
+      background-size:cover ;
+    }
+
+    .pic h3 {
+      margin-bottom: 1rem;
+      color: #1e3a8a;
+    }
+
+    .pic img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .text {
+      flex: 1 1 65%;
+      display: flex;
+      align-items: center;
+    }
+
+    .text p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+      text-align: justify;
+    }
+
+    .section-img {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 1rem;
+      border-radius: 8px;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: #1e3a8a;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .main-box {
+        flex-direction: column;
+      }
+
+      .text, .pic {
+        flex: 1 1 100%;
+      }
+    }
+
+    
+
+
+    .vision-mission-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap; /* Makes it responsive */
+}
+
+.vision-box, .mission-box {
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 48%;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.vision-box h2, .mission-box h2 {
+  color: #1e3a8a;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.vision-box p, .mission-box p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.vision-box:hover, .mission-box:hover {
+  transform: translateY(-10px); /* Makes them float */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .vision-box, .mission-box {
+    width: 100%; /* Stacks them vertically on smaller screens */
+  }
+}
+
+.affiliation-section {
+  background-color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.affiliation-section h2 {
+  color: #1e3a8a;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.logo-box {
+  flex: 1 1 100px;
+  max-width: 150px;
+  text-align: center;
+}
+
+.logo-box img {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-box img:hover {
+  transform: scale(1.1);
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- Logo Section -->
+  <div class="logo-container">
+    <div class="logo">Dr. R.N. Lahoti College of Nursing</div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+
+      <!--Course-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Courses</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="BSC.html">BSC Nursing</a>
+          <a href="PBSC.html">PBBSC Nursing</a>
+        </div>
+      </div>
+
+      <!-- Department -->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('department')">Department</button>
+        <div class="dropdown-content" id="department">
+          <a href="child-health-nursing.html">Child-health-nursing</a>
+          <a href="community-nursing.html">Community Health Nursing</a>
+          <a href="medical-nursing.html">Medical Surgical Nursing</a>
+          <a href="OBG.html">OBG Nursing</a>
+          <a href="mental-health.html">Mental Health Nursing</a>
+          
+        </div>
+      </div>
+
+      <!-- Admission -->
+     
+      <div class="dropdown">
+        <button onclick="toggleDropdown('admission')">Admission</button>
+        <div class="dropdown-content" id="admission">
+          <a href="admission-bsc.html">Bsc</a>
+          <a href="admission-pb.html">PB.Bsc</a>
+        </div>
+      </div>
+  
+
+      <!-- Facilities -->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Facilities</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="library.html">Library</a>
+          <a href="fundamental-lab.html">Labs</a>
+          <a href="classroom.html">Classroom</a>
+          <a href="bus.html">Bus Facilities</a>
+          <a href="hostel.html">Hostel</a>
+          <a href="parent-hoapitL.html">Parent-Hospital</a>
+        </div>
+      </div>
+
+       <!--Student Support-->
+       <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Student Support</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="anti-rag.html">Anti-Ragging Committee </a>
+          <a href="discipline.html">Disciplinary Committee</a>
+          <a href="internal-complains.html">Internal Complaints Committee</a>
+          <a href="employ.html">Employee Grievance Redressal Committee</a>
+        </div>
+      </div>
+
+
+
+      <a href="gallery.html">Gallery</a>
+      <a href="#">IQAC</a>
+
+
+      <!--IMP Links-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">IMP Link</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="https://www.muhs.ac.in/">MUHS </a>
+          <a href="https://maharashtranursingcouncil.org/">Maharashtra Nursing Council</a>
+        </div>
+      </div>
+
+
+      <!--MUHS-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">MUHS Mandate</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="2026-2027.html">2026-2027</a>
+          <a href="2025-2026.html">2025-2026</a>
+          <a href="2024.html">2024-2025</a>
+        </div>
+      </div>
+
+
+
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+  
+
+
+  <main>
+    <section>
+      <div class="main-box">
+        <div class="pic">
+          <h3>Welcome to Dr. R. N. Lahoti College of Nursing</h3>
+          <img src="college.jpeg" alt="Founder">
+        </div>
+        <div class="text">
+          <p>
+            Dr. R. N. Lahoti College of Nursing was established in 2023 under the aegis of Navodaya Shikshan Krida and Sanskrutik Mandal, Sultanpur. The college offers three nursing programs: B.Sc. Nursing, Post Basic B.Sc. Nursing, and General Nursing and Midwifery (GNM).
+<br>
+            The B.Sc. Nursing course commenced in October 2023 with an initial intake of 50 students. In 2024, the Post Basic B.Sc. Nursing and GNM programs were launched, each with an annual intake of 40 students. Currently, a total of 140 students are enrolled across all programs at Dr. R. N. Lahoti College of Nursing.
+            <br>
+            
+            The college is governed by the norms of the Maharashtra University of Health Sciences (MUHS), the Maharashtra Nursing Council (MNC), and the Indian Nursing Council (INC). The curriculum prescribed by MUHS is fully implemented at the college. The academic program includes theory classes, laboratory sessions, and clinical postings by the standards of MUHS, INC, and MNC.
+            <br>
+            Dr. R. N. Lahoti College of Nursing boasts state-of-the-art infrastructure, including spacious classrooms with modern teaching aids and well-equipped laboratories. The academic team comprises 20 highly qualified and experienced faculty members dedicated to providing quality education and mentorship.
+            <br>
+            
+          </p>
+        </div>
+      </div>
+
+
+      <div class="main-box">
+        <div class="pic">
+          <h3>Parent Hospital</h3>
+          <img src="hospital.jpg" alt="Founder">
+        </div>
+        
+        <div class="text">
+          <p>
+           <strong>
+            Shriram Multi-Specialty Hospital<br>
+            Parent Hospital of Dr. R. N. Lahoti College of Nursing<br>
+           </strong>
+
+"Where Care Comes First"<BR>
+
+Shriram Multi-Specialty Hospital is a 100-bedded parent hospital located within the same campus as Dr. R. N. Lahoti College of Nursing in Sultanpur. This close integration allows students to gain hands-on clinical experience as part of their daily training.
+<br>
+The hospital features well-equipped medical and surgical wards, ICU and Neuro-ICU, and three modern Operation Theatres. It also houses advanced pathology, microbiology, and radiology departments, with facilities like CT Scan, MRI, Ultra Sonography, Echo, and Digital X-ray.
+<br>
+Students are regularly posted here to develop their clinical skills in a real-time healthcare setting.
+
+          </p>
+        </div>
+        
+      </div>
+
+
+      <div class="main-box">
+        <div class="pic">
+          <h3>President's Message</h3>
+          <img src="hemraj.jpg" alt="Founder">
+        </div>
+        
+        <div class="text">
+          <p>
+            With over 40 years of experience as a doctor, I have seen the vital role nurses play in patient care. Inspired by this, I established Dr. R. N. Lahoti College of Nursing in a rural area to provide quality education and a supportive environment for aspiring nurses.<br><br>
+            Our goal is to create opportunities for students to grow, serve, and succeed in their nursing careers. I warmly welcome you to this journey of learning and service.<br><br>
+            Warm regards,<br>
+            <strong>Dr. Hemraj  Ramprasad Lahoti</strong><br>
+            President<br>
+            Dr. R. N. Lahoti College of Nursing
+          </p>
+        </div>
+        
+      </div>
+
+      <div class="main-box">
+        <div class="pic">
+          <h3>Secretary's Message</h3>
+          <img src="shashiraj.jpg" alt="Founder">
+        </div>
+        <div class="text">
+          <p>
+            Welcome to Dr. R. N. Lahoti College of Nursing. As medical professionals, we understand the vital role of nurses in patient care. With this in mind, we have established this institution to provide quality education and practical training that prepares students to become skilled, compassionate, and responsible nurses.
+            <br>
+            We are proud to support your journey in nursing and are committed to shaping you into healthcare professionals who will make a real difference in the lives of others.
+            <br>
+            Welcome to a future of learning, caring, and transforming lives.
+             <br>
+            Warm regards,<br>
+            <strong>Dr. Shashiraj H Lahoti</strong><br>
+            Secretary<br>
+            Dr. R. N. Lahoti College of Nursing
+
+          </p>
+        </div>
+      </div>
+
+
+      <div class="main-box">
+        <div class="pic">
+          <h3>Director's Message</h3>
+          <img src="joti.jpg" alt="Founder">
+        </div>
+        <div class="text">
+          <p>
+            Dear Students,<br>
+
+            Welcome to Dr. R. N. Lahoti College of Nursing! We are delighted to have you join our institution, where we strive to nurture skilled, compassionate, and confident nursing professionals. With dedicated faculty, modern facilities, and a student-friendly environment, we are committed to supporting your growth every step of the way.
+            <br>
+            Wishing you a successful and fulfilling journey ahead.
+            <br>
+            Warm regards,<br>
+            <strong>Dr.Jyoti S Lahoti</strong><br>
+            Director<br>
+            Dr. R. N. Lahoti College of Nursing
+            
+
+          </p>
+        </div>
+      </div>
+
+      <div class="vision-mission-container">
+        <div class="vision-box">
+          <h2>Vision</h2>
+          <p>“<strong>Educating with Excellence</strong>, Dr. R.N. Lahoti College of Nursing aspires to be a premier institution, shaping compassionate and skilled nursing professionals for a transformative impact on healthcare."</p>
+        </div>
+      
+        <div class="mission-box">
+          <h2>Mission</h2>
+          <p>"Dr. R. N. Lahoti College of Nursing is committed to educating compassionate and competent nursing professionals through excellence in teaching, innovation in practice, and a strong focus on ethical, evidence-based healthcare"</p>
+        </div>
+      </div>
+
+      <div class="main-box">
+        <div class="pic">
+          <h3>Principal's Message</h3>
+          <img src="principal.jpg" alt="Founder">
+        </div>
+        <div class="text">
+          <p>
+            Welcome to Dr. R. N. Lahoti College of Nursing, where we nurture the next generation of healthcare professionals with care, competence, and commitment.
+<br>
+Our institution offers a comprehensive spectrum of nursing education—from foundational training to advanced professional preparation—designed to equip students with the knowledge, skills, and values needed in today’s dynamic healthcare environment.
+<br>
+With experienced faculty, quality training, and a caring atmosphere, we help our students grow under our guiding motto—Learn, Care, Transform.
+<br>
+<strong>"Nursing is not just a career, it's a calling to serve, heal, and make a difference."</strong>
+<br>
+Wishing you a rewarding and inspiring journey in this noble profession.
+<br>
+Warm regards,<br>
+<strong>Rajula Asir R</strong><br>
+Principal, Dr. R. N. Lahoti College of Nursing
+
+
+          </p>
+        </div>
+      </div>
+
+
+      <section class="affiliation-section">
+        <h2>Affiliations</h2>
+        <div class="logo-section">
+          <div class="logo-box">
+            <img src="Alogo1.jpg" alt="Logo 1" />
+            <p></p>
+          </div>
+          <div class="logo-box">
+            <img src="Alogo2.jpg" alt="Logo 2" />
+            <p>Code:5113</p>
+          </div>
+          <div class="logo-box">
+            <img src="Alogo3.jpg" alt="Logo 3" />
+            <p>Code:155154</p>
+          </div>
+          <div class="logo-box">
+            <img src="Alogo4.jpeg" alt="Logo 3" />
+            <p>Code:9255</p>
+          </div>
+          
+        </div>
+      </section>
+      
+      
+      
+
+
+
+      
+    </section>
+    
+  </main>
+</body>
+<script>
+
+const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+
+  // Fix: Close dropdowns when tapping outside
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".dropdown")) {
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        drop.classList.remove("show-dropdown");
+      });
+    }
+  });
+
+  // Dropdown toggle function
+  function toggleDropdown(id) {
+    const dropdown = document.getElementById(id);
+    const parent = dropdown.parentElement;
+    parent.classList.toggle("show-dropdown");
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".dropdown")) {
+      document.querySelectorAll(".dropdown-content").forEach((el) => {
+        el.classList.remove("show-dropdown");
+      });
+    }
+  });
+
+  // Start the slider after page load
+  document.addEventListener("DOMContentLoaded", showSlides);
+</script>
+
+</html>

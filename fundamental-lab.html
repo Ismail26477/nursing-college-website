@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nursing Labs</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    p {
+      text-align: justify;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8;
+      padding: 20px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .box {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+    }
+
+    .box img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .box-content {
+      padding: 20px;
+    }
+
+    .box h3 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    .box p {
+      color: #555;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+
+      .box img {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center; margin-bottom: 30px; color: #1e3a8a;">Nursing Laboratories</h1>
+  <div class="grid-container">
+    <div class="box">
+      <img src="fundamental-pic.jpeg" alt="Fundamentals Lab">
+      <div class="box-content">
+        <h3>Fundamentals of Nursing Laboratory</h3>
+        <p>This laboratory is well equipped with all the surgical instruments, articles, glassware’s, rubber goods, and manikins such as adult male / female for demonstrating nursing procedures. Students are exposed to developing skills by practicing procedures in the demonstration room under the able guidance of nursing faculty. This laboratory develops the basic and advanced skills required for a nurse in delivery of patient care.</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="OBG-pic.jpeg" alt="Maternal & Child Health Lab">
+      <div class="box-content">
+        <h3>Maternal & Child Health Laboratory</h3>
+        <p>MCH Laboratory enables the students to develop skills required for caring for women with gynaecological problems, providing obstetric care throughout pregnancy as well as preparing nurses in various pediatric procedures. The laboratory is well equipped with a female pelvis, foetal skull, and a delivery manikin. A delivery kit is also available for conducting home deliveries.</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="community-pic.jpeg" alt="Community Health Lab">
+      <div class="box-content">
+        <h3>Community Health Nursing Laboratory</h3>
+        <p>Community Health Nursing Laboratory prepares the students to provide care to families in a community setting. The lab enables the students to develop skills using a home-based approach with community bags, tools for treating minor ailments, and audiovisual aids for health education delivery.</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="Nutrientian-lab.jpeg" alt="Nutrition Lab">
+      <div class="box-content">
+        <h3>Nutrition Laboratory</h3>
+        <p>Students learn the principles of food preparation, nutritious recipes, and methods of cooking & serving. They are trained to calculate nutritive values and prepare menus for normal and therapeutic diets in an economical way, focusing on community needs and low-cost ingredients.</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="Advance-pic.jpeg" alt="Advance Nursing Lab">
+      <div class="box-content">
+        <h3>Advance Nursing Lab</h3>
+        <p>This is an extension of the nursing foundation lab with high-fidelity simulation manikins to stimulate critical thinking. The lab also has various manikins to help students practice IV line insertion, PICC line handling, and suturing techniques.</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="computer.jpg" alt="Computer Lab">
+      <div class="box-content">
+        <h3>Computer Lab</h3>
+        <p>The Computer Lab has LAN/Wi-Fi connection, and an internet cable connection is also available. There are exclusive computer set up in the library for the students and faculty for their use. The students are provided free usage of the computers and internet for their curricular submissions.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

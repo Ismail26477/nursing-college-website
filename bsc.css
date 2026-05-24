@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: #0F52BA;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 36px;
+    letter-spacing: 1px;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 0;
+  }
+  
+  .department-options {
+    margin-bottom: 30px;
+  }
+  
+  .department-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .department-list li {
+    margin: 15px 0;
+  }
+  
+  .department-list a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #0F52BA;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .department-list a:hover {
+    background-color: #094fa7;
+    transform: translateY(-5px);
+  }
+  
+  .content-container {
+    display: none;
+  }
+  
+  .content-section {
+    display: none;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+    padding: 20px;
+    border-left: 5px solid #0F52BA;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    color: #0F52BA;
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  ul {
+    list-style-type: square;
+    padding-left: 20px;
+  }
+  
+  ul li {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    header {
+      padding: 20px 0;
+    }
+  
+    h1 {
+      font-size: 30px;
+    }
+  
+    .container {
+      width: 100%;
+    }
+  
+    .department-list a {
+      font-size: 16px;
+      padding: 10px 15px;
+    }
+  
+    .content-section {
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    ul li {
+      font-size: 16px;
+    }
+  }

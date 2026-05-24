@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admission Guidelines</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+   
+    h1, h2, h3 {
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    .section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .section ul {
+      padding-left: 1.2rem;
+    }
+
+    .section li {
+      margin-bottom: 8px;
+    }
+
+    .icon {
+      color: #1e3a8a;
+      margin-right: 8px;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: center;
+      background-color: #e0e7ff;
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    .step-item i {
+      margin-right: 10px;
+      font-size: 18px;
+      color: #1e3a8a;
+    }
+
+    @media (max-width: 768px) {
+      .step-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    .combined-footer {
+  background-color: #0F52BA;
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.footer-logo img {
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  text-align: left;
+}
+
+.footer-about,
+.footer-links,
+.footer-contact {
+  flex: 1 1 250px;
+  min-width: 220px;
+}
+
+.footer h3,
+.footer h4 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer p,
+.footer li,
+.footer a {
+  font-size: 0.95rem;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #ffd700;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+  font-size: 0.85rem;
+}
+
+/* 🔄 Responsive for mobile devices */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-about,
+  .footer-links,
+  .footer-contact {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer-logo img {
+    height: 80px;
+  }
+}
+:root {
+  --primary-color: #274bc1;
+  --text-color: #1B1B1B;
+  --bg-color: #F5F9FF;
+  --white: #FFFFFF;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color:#F5F9FF;
+  color: var(--text-color);
+  padding :20px,
+}
+
+/* Logo Section */
+.logo-container {
+  text-align: center;
+  background-color: #274bc1;
+  padding: 30px 0;
+}
+
+.logo {
+  font-size: 2rem;
+  color: var(--white);
+  font-weight: bold;
+}
+
+/* NAVBAR CONTAINER */
+.navbar {
+background-color: #1e3a8a;
+color: white;
+padding: 1rem 1.5rem;
+position: relative;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+flex-wrap: wrap;
+}
+
+/* BRAND */
+.navbar .brand {
+font-size: 1.25rem;
+font-weight: bold;
+color: white;
+}
+
+/* HAMBURGER ICON */
+.menu-toggle {
+display: none;
+font-size: 28px;
+color: white;
+cursor: pointer;
+z-index: 10;
+}
+
+/* NAV LINKS (Single Row) */
+.nav-links {
+display: flex;
+/* gap: 1rem; */
+align-items: center;
+}
+
+.nav-links a,
+.nav-links .dropdown > button {
+color: white;
+background: transparent;
+border: none;
+text-decoration: none;
+padding: 10px 16px;
+font-size: 16px;
+cursor: pointer;
+transition: background 0.3s, color 0.3s;
+position: relative;
+display: inline-flex;
+align-items: center;
+}
+
+/* Hover effect */
+.nav-links a:hover,
+.nav-links .dropdown > button:hover {
+background-color: rgba(255, 255, 255, 0.15);
+border-radius: 5px;
+}
+
+/* DROPDOWN */
+.dropdown {
+position: relative;
+}
+
+.dropdown-content {
+display: block;
+opacity: 0;
+visibility: hidden;
+position: absolute;
+top: 100%;
+left: 0;
+background-color: white;
+color: black;
+min-width: 180px;
+border-radius: 8px;
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+z-index: 100;
+transform: translateY(20px);
+transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+opacity: 1;
+visibility: visible;
+transform: translateY(0);
+pointer-events: auto;
+}
+
+.dropdown-content a {
+display: block;
+padding: 10px 16px;
+text-decoration: none;
+color: black;
+transition: background 0.2s;
+border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-content a:hover {
+background-color: #f0f0f0;
+}
+
+/* Arrow */
+.dropdown > button::after {
+content: ' ▼';
+font-size: 10px;
+margin-left: 4px;
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background-color: #1e3a8a;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    padding: 1rem 0;
+    z-index: 999;
+    align-items: center; /* Center items */
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a,
+  .nav-links .dropdown > button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 12px 1.5rem;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: static;
+    background-color: #f1f1f1;
+    box-shadow: none;
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown.show-dropdown .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    color: #1e3a8a;
+    padding: 10px 0;
+    display: block;
+  }
+}
+
+  </style>
+</head>
+<body>
+    <!-- Logo Section -->
+  <div class="logo-container">
+    <div class="logo">Dr. R.N. Lahoti College of Nursing</div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+
+      <!--Course-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Courses</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="BSC.html">BSC Nursing</a>
+          <a href="PBSC.html">PBBSC Nursing</a>
+        </div>
+      </div>
+
+      <!-- Department -->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('department')">Department</button>
+        <div class="dropdown-content" id="department">
+          <a href="child-health-nursing.html">Child-health-nursing</a>
+          <a href="community-nursing.html">Community Health Nursing</a>
+          <a href="medical-nursing.html">Medical Surgical Nursing</a>
+          <a href="OBG.html">OBG Nursing</a>
+          <a href="mental-health.html">Mental Health Nursing</a>
+          
+        </div>
+      </div>
+
+      <!-- Admission -->
+     
+      <div class="dropdown">
+        <button onclick="toggleDropdown('admission')">Admission</button>
+        <div class="dropdown-content" id="admission">
+          <a href="admission-bsc.html">Bsc</a>
+          <a href="admission-pb.html">PB.Bsc</a>
+        </div>
+      </div>
+  
+
+      <!-- Facilities -->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Facilities</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="library.html">Library</a>
+          <a href="fundamental-lab.html">Labs</a>
+          <a href="classroom.html">Classroom</a>
+          <a href="bus.html">Bus Facilities</a>
+          <a href="hostel.html">Hostel</a>
+          <a href="parent-hoapitL.html">Parent-Hospital</a>
+        </div>
+      </div>
+
+       <!--Student Support-->
+       <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Student Support</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="anti-rag.html">Anti-Ragging Committee </a>
+          <a href="discipline.html">Disciplinary Committee</a>
+          <a href="internal-complains.html">Internal Complaints Committee</a>
+          <a href="employ.html">Employee Grievance Redressal Committee</a>
+        </div>
+      </div>
+
+
+
+      <a href="gallery.html">Gallery</a>
+      <a href="#">IQAC</a>
+
+
+      <!--IMP Links-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">IMP Link</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="https://www.muhs.ac.in/">MUHS </a>
+          <a href="https://maharashtranursingcouncil.org/">Maharashtra Nursing Council</a>
+        </div>
+      </div>
+
+
+      <!--MUHS-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">MUHS Mandate</button>
+        <div class="dropdown-content" id="facilities">
+         <a href="2026-2027.html">2026-2027</a>
+          <a href="2025-2026.html">2025-2026</a>
+          <a href="2024.html">2024-2025</a>
+        </div>
+      </div>
+
+
+
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <h1>Admission Guidelines</h1>
+
+  <div class="section">
+    <h2><i class="fas fa-check-circle icon"></i>Eligibility Criteria</h2>
+    <ul>
+      <li>The minimum age for admission shall be 17 years on 31st December of the year in which admission is sought.</li>
+      <li>Minimum education:
+        <ul>
+          <li>For OPEN Category: 10+2 class passed with Science (PCB) & English Core/English Elective with aggregate of 45% marks from recognized board under AISSCE/CBSE/ICSE/SSCE/HSCE or other equivalent Board.</li>
+          <li>For Reserved Category: 10+2 class passed with Science (PCB) & English Core/English Elective with aggregate of 40% marks from recognized board under AISSCE/CBSE/ICSE/SSCE/HSCE or other equivalent Board.</li>
+        </ul>
+      </li>
+      <li>Students appearing in 10+2 examination in science conducted by National Institute of Open School with 45% marks.</li>
+      <li>Student shall be admitted once in a year.</li>
+      <li>Student shall be medically fit.</li>
+      <li>Have appeared for MH-B.Sc. Nursing CET exam.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2><i class="fas fa-tasks icon"></i>Admission Process</h2>
+    <h3>DMER Process</h3>
+    <div class="steps">
+      <div class="step-item"><i class="fas fa-graduation-cap"></i> Step 1 - Pass 12th with required criteria and appear for MH-B.Sc. Nursing CET</div>
+      <div class="step-item"><i class="fas fa-clipboard-list"></i> Step 2 - Register on www.mahacet.org and fill the preference list</div>
+      <div class="step-item"><i class="fas fa-check-circle"></i> Step 3 - Mahacet releases list of selected candidates</div>
+      <div class="step-item"><i class="fas fa-file-signature"></i> Step 4 - Complete college application, document scrutiny, and fee payment</div>
+    </div>
+
+    <h3 style="margin-top: 20px;">Institutional Quota (Including NRI)</h3>
+    <div class="steps">
+      <div class="step-item"><i class="fas fa-bullhorn"></i> Step 1 - NRI quota advertisement is released</div>
+      <div class="step-item"><i class="fas fa-edit"></i> Step 2 - Fill the online application form</div>
+      <div class="step-item"><i class="fas fa-list-ol"></i> Step 3 - Merit list declared based on CET marks</div>
+      <div class="step-item"><i class="fas fa-credit-card"></i> Step 4 - Pay the fees and submit required documents</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2><i class="fas fa-folder-open icon"></i>Documents Required</h2>
+    <ul>
+      <li>3 sets of attested photocopies</li>
+      <li>8 passport size photographs</li>
+      <li>MH CET B.Sc. Nursing Admit Card (if applicable)</li>
+      <li>MH CET B.Sc. Nursing mark sheet</li>
+      <li>Domicile/Nationality Certificate</li>
+      <li>S.S.C. Mark Sheet & Passing Certificate</li>
+      <li>H.S.C. Mark Sheet & Passing Certificate</li>
+      <li>Medical Fitness Certificate (In MH CET Brochure format)</li>
+      <li>College Leaving Certificate</li>
+      <li>Gap Certificate (if applicable)</li>
+      <li>Aadhar Card (Attested photocopy)</li>
+      <li><strong>For Reserved Category:</strong>
+        <ul>
+          <li>Caste Certificate</li>
+          <li>Caste Validity Certificate - Mandatory</li>
+          <li>Non-Creamy Layer Certificate (If Applicable)</li>
+        </ul>
+      </li>
+      <li><strong>For NRI Students:</strong>
+        <ul>
+          <li>Family tree Affidavit signed by claimant</li>
+          <li>Photocopy of sponsor & student passport</li>
+          <li>Relationship documents between sponsor and student</li>
+          <li>Affidavits disclosing full identity of claimant and sponsor</li>
+          <li>Utility bills/ITR confirming sponsor’s address</li>
+          <li>Last 6 months bank statement</li>
+          <li>Valid VISA of sponsor & student (if applicable)</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2><i class="fas fa-info-circle icon"></i>Important Instructions</h2>
+    <ul>
+      <li>Fees for DMER CAP and Institutional quota to be paid at admission.</li>
+      <li>DMER CAP students must pay by A/c payee Demand Draft to Dr. R.N. Lahoti College of Nursing, Sultanpur.</li>
+      <li>Institutional quota students must pay via NEFT.</li>
+      <li>Fees for subsequent academic years must be paid as per schedule.</li>
+      <li><strong>Disclaimer:</strong> Dr. R.N. Lahoti College of Nursing has no agents, representatives, or other admission offices outside Sultanpur. Do not deal with unauthorized persons or organizations.</li>
+    </ul>
+  </div>
+  <footer class="combined-footer">
+    <div class="footer-logo">
+      <img src="Logo.jpg" alt="Dr. R.N. Lahoti College of Nursing Logo">
+    </div>
+  
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Dr. R.N. Lahoti College of Nursing</h3>
+        <p>Empowering future healthcare heroes through excellence in nursing education and compassionate care.</p>
+      </div>
+  
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Admissions</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Departments</a></li>
+          <li><a href="#">Student Support</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><strong>Address:</strong> Jalna Road, Sultanpur,<br>
+        Lonar (Tq), <br>Buldhana 443 302</p><br>
+        <p><strong>Email:</strong> drnlbscnursing@gmail.com</p><br>
+        <p><strong>Phone:</strong> +91 9071718888</p>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 Dr. R.N. Lahoti College of Nursing. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+
+    const toggle = document.getElementById("menu-toggle");
+      const nav = document.getElementById("nav-links");
+    
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    
+      // Fix: Close dropdowns when tapping outside
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".dropdown")) {
+          document.querySelectorAll(".dropdown").forEach(drop => {
+            drop.classList.remove("show-dropdown");
+          });
+        }
+      });
+    
+      // Dropdown toggle function
+      function toggleDropdown(id) {
+        const dropdown = document.getElementById(id);
+        const parent = dropdown.parentElement;
+        parent.classList.toggle("show-dropdown");
+      }
+    
+      // Close dropdown when clicking outside
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".dropdown")) {
+          document.querySelectorAll(".dropdown-content").forEach((el) => {
+            el.classList.remove("show-dropdown");
+          });
+        }
+      });
+    
+    
+      let slideIndex = 0;
+    
+      function showSlides() {
+        const slides = document.getElementsByClassName("custom-slides");
+    
+        // Hide all slides
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+    
+        // Move to the next slide
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+    
+        // Display the current slide
+        slides[slideIndex - 1].style.display = "block";
+    
+        // Repeat every 4 seconds
+        setTimeout(showSlides, 4000);
+      }
+    
+      // Start the slider after page load
+      document.addEventListener("DOMContentLoaded", showSlides);
+    </script>
+    
+  
+</body>
+</html>
