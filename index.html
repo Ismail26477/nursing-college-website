@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. R.N. Lahoti College of Nursing</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+<body>
+  <div class="logo-container">
+    <img src="Logo.jpg" alt="Left Logo" class="logo-img left-logo" />
+    
+    <div class="logo-text">
+      <div class="logo-subtitle">Navodaya Shikshan Krida and Sanskrutik Mandals</div>
+      <div class="logo">Dr. R.N. Lahoti College of Nursing</div>
+    </div>
+    
+    <img src="trust-logo.jpeg" alt="Right Logo" class="logo-img right-logo" />
+  </div>
+  
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav class="nav-links" id="nav-links">
+      <a href="home.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+
+      <!--Course-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Courses</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="BSC.html">BSC Nursing</a>
+          <a href="PBSC.html">PBBSC Nursing</a>
+        </div>
+      </div>
+
+      <!-- Department -->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('department')">Department</button>
+        <div class="dropdown-content" id="department">
+          <a href="child-health-nursing.html">Child-health-nursing</a>
+          <a href="community-nursing.html">Community Health Nursing</a>
+          <a href="medical-nursing.html">Medical Surgical Nursing</a>
+          <a href="OBG.html">OBG Nursing</a>
+          <a href="mental-health.html">Mental Health Nursing</a>
+          
+        </div>
+      </div>
+
+      <!-- Admission -->
+     
+      <div class="dropdown">
+        <button onclick="toggleDropdown('admission')">Admission</button>
+        <div class="dropdown-content" id="admission">
+          <a href="admission-bsc.html">Bsc</a>
+          <a href="admission-pb.html">PB.Bsc</a>
+        </div>
+      </div>
+  
+
+      <!-- Facilities -->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Facilities</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="library.html">Library</a>
+          <a href="fundamental-lab.html">Labs</a>
+          <a href="classroom.html">Classroom</a>
+          <a href="bus.html">Bus Facilities</a>
+          <a href="hostel.html">Hostel</a>
+          <a href="parent-hoapitL.html">Parent-Hospital</a>
+        </div>
+      </div>
+
+       <!--Student Support-->
+       <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Student Support</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="anti-rag.html">Anti-Ragging Committee </a>
+          <a href="discipline.html">Disciplinary Committee</a>
+          <a href="internal-complains.html">Internal Complaints Committee</a>
+          <a href="employ.html">Employee Grievance Redressal Committee</a>
+        </div>
+      </div>
+
+
+
+      <a href="gallery.html">Gallery</a>
+      <a href="#">IQAC</a>
+
+
+      <!--IMP Links-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">IMP Link</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="https://www.muhs.ac.in/">MUHS </a>
+          <a href="https://maharashtranursingcouncil.org/">Maharashtra Nursing Council</a>
+        </div>
+      </div>
+
+
+      <!--MUHS-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">MUHS Mandate</button>
+        <div class="dropdown-content" id="facilities">
+         <a href="2026-2027.html">2026-2027</a>
+          <a href="2025-2026.html">2025-2026</a>
+          <a href="2024.html">2024-2025</a>
+        </div>
+      </div>
+
+
+
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+<main>
+     <!-- Running Text Section with Link -->
+<div class="running-text-container">
+    <a href="https://www.example.com" class="running-text">
+      Welcome to Dr. R.N. Lohoti College of Nursing. Providing Excellence in Nursing Education!  
+    </a>
+  </div>
+
+
+  <div class="slider-and-sidebar">
+    <!-- Slider Section (70%) -->
+    <div class="slider-container">
+      <div class="custom-slider">
+        <div class="custom-slides fade"><img src="home1.jpg" alt="Slide 1"></div>
+        <div class="custom-slides fade"><img src="home2.jpg" alt="Slide 2"></div>
+        <div class="custom-slides fade"><img src="home3.jpg" alt="Slide 3"></div>
+        <div class="custom-slides fade"><img src="home4.jpg " alt="Slide 4"></div>
+        <div class="custom-slides fade"><img src="Home5.jpeg" alt="Slide 5"></div>
+        <div class="custom-slides fade"><img src="home6.jpg" alt="Slide 6"></div>
+        <div class="custom-slides fade"><img src="home7.jpg" alt="Slide 7"></div>
+        <div class="custom-slides fade"><img src="home8.jpg" alt="Slide 8"></div>
+        <div class="custom-slides fade"><img src="home9.jpeg" alt="Slide 9"></div>
+        <div class="custom-slides fade"><img src="home10.jpeg" alt="Slide 9"></div>
+      </div>
+    </div>
+  
+    <!-- Announcement Section (30%) -->
+    <div class="announcement-sidebar">
+      <div class="card">
+        <h3>Important Announcements</h3>
+        <ul>
+          <li>
+            <i class="fas fa-circle blinking-icon"></i>
+            <a href="fee-bsc.pdf">> FRA Fee Proposal 2026-2027: BSC</a></li>
+             <li>
+            <i class="fas fa-circle blinking-icon"></i>
+            <a href="fee-pbsc.pdf">> FRA Fee Proposal 2026-2027: PB.BSC</a></li>
+          <li>
+            <i class="fas fa-circle blinking-icon"></i>
+            <a href="PBBSC Application Form.docx">> Admission Link For Post Bsc Nursing</a></li>
+         
+        </ul>
+      </div>
+  
+      <div class="card">
+        <h3>E-Learning Resources</h3>
+        <ul>
+          <li><a href="https://swayam.gov.in/">- Swayam</a></li>
+          <li><a href="https://sphere.aastrika.org/public/home">- Aastrika</a></li>
+          <li><a href="https://ndl.iitkgp.ac.in/">- NDLI</a></li>
+          <li><a href="https://www.coursera.org/">- Coursera</a></li>
+          <li><a href="https://epgp.inflibnet.ac.in/">- e-Pathshala</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="main-box">
+    <div class="pic">
+      <strong><h2>Our Inspiration</h2></strong>
+      <img src="ramprasad.jpg" alt="Founder">
+      <h3><strong>Dr. Late Ramprasad Narayan Lahoti</strong></h3>
+    </div>
+    
+    <div class="text">
+      <p>
+        Dr. Ramprasad N Lahoti born in Sultanpur, Maharashtra, inherited a legacy of healing from his father and began serving the community at a young age. Inspired to deepen his knowledge, he specialized in ayurvedic faculty and became a pioneer in treating paralysis and neurological disorders. His innovative ayurvedic therapies transformed countless lives, gaining recognition across Maharashtra and neighboring states. Despite his success, Dr. Lahoti remained humble, offering free medical services in his village and mentoring future healers. His visionary thinking and tireless efforts have transformed the rural area of Sultanpur into a well-recognized and progressive region. It was his insightful idea to introduce educational courses that opened doors of opportunity for many, thereby transforming countless lives. His legacy continues to shape the future through the power of education and service.
+        <br>
+        <!-- <strong>DR. RAMPRASAD N LAHOTI</strong><br>
+        A Beacon of Inspiration<br>
+        Dr. R. N. Lahoti College of Nursing -->
+      </p>
+    </div>
+    
+  </div>
+
+  <div class="main-box">
+    <div class="pic">
+      <strong><h2>Our Founder</h2></strong>
+      
+      <img src="hemraj.jpg" alt="Founder">
+      <h3><strong>Dr. Hemraj  Ramprasad Lahoti</strong></h3>
+    </div>
+    
+    <div class="text">
+      <p>
+       Dr. Hemraj R. Lahoti, the elder son of the esteemed Dr. Ramprasad Lahoti, has devoted his life to the service of humanity, following in the noble footsteps of his father. From a very young age, he embarked on his medical journey with unwavering dedication and passion. Known for his tireless commitment, Dr. Lahoti has treated patients from early morning until late at night, rarely allowing anything to deter him from his mission.
+<br>
+For nearly four decades, he has been a beacon of hope for countless individuals suffering from paralysis, earning him a revered place in the hearts of the people. Families continue to speak his name with gratitude, recalling the miraculous transformations he brought into their lives.
+<br>
+Recognizing the challenges faced by the rural community, Dr. Lahoti realized that true progress required more than just healthcare—it needed education. With this vision, he took it upon himself to establish educational institutions that could uplift the region. His efforts have sparked an educational revolution, turning the area into a hub of learning and opportunity.
+<br>
+<strong>Dr. Hemraj R. Lahoti</strong> is not only a dedicated physician but also a visionary leader whose influence continues to shape the lives of many through health and education.
+      </p>
+    </div>
+    
+  </div>
+
+  <section class="affiliation-section">
+    <h2>Affiliations</h2>
+    <div class="affiliation-logo-section">
+      <div class="affiliation-logo-box">
+        <img src="Alogo1.jpg" alt="Logo 1" />
+      </div>
+      <div class="affiliation-logo-box">
+        <img src="Alogo2.jpg" alt="Logo 2" />
+        <p>Code: 5113</p>
+      </div>
+      <div class="affiliation-logo-box">
+        <img src="Alogo3.jpg" alt="Logo 3" />
+        <p>Code: 155154</p>
+      </div>
+      <div class="affiliation-logo-box">
+        <img src="Alogo4.jpeg" alt="Logo 4" />
+        <p>Code: 9255</p>
+      </div>
+    </div>
+  </section>
+  
+
+  
+
+
+  <!-- <section class="course-gallery">
+    <h2>Courses</h2>
+    <div class="gallery-grid">
+      <div class="course-card">
+        <img src="img1.jpg" alt="B.Sc Nursing">
+        <div class="caption">B.Sc Nursing</div>
+      </div>
+      <div class="course-card">
+        <img src="img1.jpg" alt="M.Sc Nursing">
+        <div class="caption">PB B.Sc Nursing</div>
+      </div>
+      <div class="course-card">
+        <img src="img1.jpg" alt="GNM">
+        <div class="caption">General Nursing & Midwifery (GNM)</div>
+      </div>
+    </div>
+  </section>  
+
+
+
+  <section class="department-gallery">
+    <h2>Departments</h2>
+    <div class="gallery-grid">
+      <div class="course-card">
+        <img src="Department-S.jpg" alt="Medical-Surgical Nursing">
+        <div class="caption">Medical-Surgical Nursing</div>
+      </div>
+      <div class="course-card">
+        <img src="deparment-P.jpg" alt="Child Health Nursing">
+        <div class="caption">Child Health Nursing</div>
+      </div>
+      <div class="course-card">
+        <img src="Department-M.jpg" alt="Mental Health Nursing">
+        <div class="caption">Mental Health Nursing</div>
+      </div>
+      <div class="course-card">
+        <img src="Department-C.jpg" alt="Community Health Nursing">
+        <div class="caption">Community Health Nursing</div>
+      </div>
+      <div class="course-card">
+        <img src="Deparment-G.jpg" alt="Obstetrics and Gynecological Nursing">
+        <div class="caption">Obstetrics & Gynecological Nursing</div>
+      </div>
+      <div class="course-card">
+        <img src="Department-S.jpg" alt="Nursing Foundations">
+        <div class="caption">Nursing Foundations</div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="news-gallery">
+    <h2>News & Events</h2>
+    <div class="gallery-grid">
+      <div class="course-card">
+        <img src="img1.jpg" alt="News 1">
+        <div class="caption">
+          <h3>International Nurses Day 2024</h3>
+          <p>Celebrated on campus with guest speakers and workshops.</p>
+        </div>
+      </div>
+      <div class="course-card">
+        <img src="img1.jpg" alt="News 2">
+        <div class="caption">
+          <h3>Annual Sports Meet</h3>
+          <p>3-day inter-department sports event conducted successfully.</p>
+        </div>
+      </div>
+      <div class="course-card">
+        <img src="img1.jpg" alt="News 3">
+        <div class="caption">
+          <h3>Blood Donation Camp</h3>
+          <p>Organized by 3rd year nursing students in collaboration with Red Cross.</p>
+        </div>
+      </div>
+    </div>
+    <div class="show-more-container">
+        <a href="#" class="show-more-btn">Show More</a>
+      </div>
+      
+  </section> -->
+  
+  <footer class="combined-footer">
+    <div class="footer-logo">
+      <img src="Logo.jpg" alt="Dr. R.N. Lahoti College of Nursing Logo">
+    </div>
+  
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Dr. R.N. Lahoti College of Nursing</h3>
+        <p>Empowering future healthcare heroes through excellence in nursing education and compassionate care.</p>
+      </div>
+  
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Admissions</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Departments</a></li>
+          <li><a href="#">Student Support</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><strong>Address:</strong> Jalna Road, Sultanpur,<br>
+        Lonar (Tq), <br>Buldhana 443 302</p><br>
+        <p><strong>Email:</strong> drnlbscnursing@gmail.com</p><br>
+        <p><strong>Phone:</strong> +91 9071718888</p>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 Dr. R.N. Lahoti College of Nursing. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  
+</main>
+
+<script>
+
+const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+
+  // Fix: Close dropdowns when tapping outside
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".dropdown")) {
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        drop.classList.remove("show-dropdown");
+      });
+    }
+  });
+
+  // Dropdown toggle function
+  function toggleDropdown(id) {
+    const dropdown = document.getElementById(id);
+    const parent = dropdown.parentElement;
+    parent.classList.toggle("show-dropdown");
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".dropdown")) {
+      document.querySelectorAll(".dropdown-content").forEach((el) => {
+        el.classList.remove("show-dropdown");
+      });
+    }
+  });
+
+
+  let slideIndex = 0;
+
+  function showSlides() {
+    const slides = document.getElementsByClassName("custom-slides");
+
+    // Hide all slides
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    // Move to the next slide
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+
+    // Display the current slide
+    slides[slideIndex - 1].style.display = "block";
+
+    // Repeat every 4 seconds
+    setTimeout(showSlides, 4000);
+  }
+
+  // Start the slider after page load
+  document.addEventListener("DOMContentLoaded", showSlides);
+</script>
+
+
+
+</body>
+</html>
+
