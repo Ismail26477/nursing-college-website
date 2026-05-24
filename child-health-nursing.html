@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Child Health Nursing – Dr. R.N. Lahoti College of Nursing</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+  --primary-color: #274bc1;
+  --text-color: #1B1B1B;
+  --bg-color: #F5F9FF;
+  --white: #FFFFFF;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color:#F5F9FF;
+  color: var(--text-color);
+}
+
+/* Logo Section */
+.logo-container {
+  text-align: center;
+  background-color: #274bc1;
+  padding: 30px 0;
+}
+
+.logo {
+  font-size: 2rem;
+  color: var(--white);
+  font-weight: bold;
+}
+
+/* NAVBAR CONTAINER */
+.navbar {
+background-color: #1e3a8a;
+color: white;
+padding: 1rem 1.5rem;
+position: relative;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+flex-wrap: wrap;
+}
+
+/* BRAND */
+.navbar .brand {
+font-size: 1.25rem;
+font-weight: bold;
+color: white;
+}
+
+/* HAMBURGER ICON */
+.menu-toggle {
+display: none;
+font-size: 28px;
+color: white;
+cursor: pointer;
+z-index: 10;
+}
+
+/* NAV LINKS (Single Row) */
+.nav-links {
+display: flex;
+/* gap: 1rem; */
+align-items: center;
+}
+
+.nav-links a,
+.nav-links .dropdown > button {
+color: white;
+background: transparent;
+border: none;
+text-decoration: none;
+padding: 10px 16px;
+font-size: 16px;
+cursor: pointer;
+transition: background 0.3s, color 0.3s;
+position: relative;
+display: inline-flex;
+align-items: center;
+}
+
+/* Hover effect */
+.nav-links a:hover,
+.nav-links .dropdown > button:hover {
+background-color: rgba(255, 255, 255, 0.15);
+border-radius: 5px;
+}
+
+/* DROPDOWN */
+.dropdown {
+position: relative;
+}
+
+.dropdown-content {
+display: block;
+opacity: 0;
+visibility: hidden;
+position: absolute;
+top: 100%;
+left: 0;
+background-color: white;
+color: black;
+min-width: 180px;
+border-radius: 8px;
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+z-index: 100;
+transform: translateY(20px);
+transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+opacity: 1;
+visibility: visible;
+transform: translateY(0);
+pointer-events: auto;
+}
+
+.dropdown-content a {
+display: block;
+padding: 10px 16px;
+text-decoration: none;
+color: black;
+transition: background 0.2s;
+border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-content a:hover {
+background-color: #f0f0f0;
+}
+
+/* Arrow */
+.dropdown > button::after {
+content: ' ▼';
+font-size: 10px;
+margin-left: 4px;
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background-color: #1e3a8a;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    padding: 1rem 0;
+    z-index: 999;
+    align-items: center; /* Center items */
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+  p {
+      text-align: justify;
+    }
+
+  .nav-links a,
+  .nav-links .dropdown > button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 12px 1.5rem;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: static;
+    background-color: #f1f1f1;
+    box-shadow: none;
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown.show-dropdown .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    color: #1e3a8a;
+    padding: 10px 0;
+    display: block;
+  }
+}
+
+
+    .page-banner {
+      background: url('banner-image.jpg') no-repeat center center/cover;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .page-banner h1 {
+      font-size: 2.5rem;
+      background-color: rgba(0,0,0,0.4);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    .department-detail {
+      padding: 40px 20px;
+      background-color: #f9f9f9;
+    }
+
+    .department-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .department-image,
+    .department-text {
+      flex: 1 1 400px;
+    }
+
+    .department-image img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .department-text h2 {
+      color: #0F52BA;
+      margin-bottom: 15px;
+    }
+
+    .department-text p {
+      margin-bottom: 15px;
+    }
+
+    .combined-footer {
+      background-color: #0F52BA;
+      color: #fff;
+      padding: 40px 20px 20px;
+      text-align: center;
+    }
+
+    .footer-logo img {
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 30px;
+      text-align: left;
+    }
+
+    .footer-about,
+    .footer-links,
+    .footer-contact {
+      flex: 1 1 250px;
+      min-width: 220px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links ul li a:hover {
+      color: #ffd700;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      border-top: 1px solid #ccc;
+      padding-top: 15px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .department-content {
+        flex-direction: column;
+      }
+
+      .college-logo {
+        height: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+ <!-- Logo Section -->
+ <div class="logo-container">
+    <div class="logo">Dr. R.N. Lahoti College of Nursing</div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+
+      <!--Course-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Courses</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="BSC.html">BSC Nursing</a>
+          <a href="PBSC.html">PBBSC Nursing</a>
+        </div>
+      </div>
+
+      <!-- Department -->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('department')">Department</button>
+        <div class="dropdown-content" id="department">
+          <a href="child-health-nursing.html">Child-health-nursing</a>
+          <a href="community-nursing.html">Community Health Nursing</a>
+          <a href="medical-nursing.html">Medical Surgical Nursing</a>
+          <a href="OBG.html">OBG Nursing</a>
+          <a href="mental-health.html">Mental Health Nursing</a>
+          
+        </div>
+      </div>
+
+      <!-- Admission -->
+     
+      <div class="dropdown">
+        <button onclick="toggleDropdown('admission')">Admission</button>
+        <div class="dropdown-content" id="admission">
+          <a href="admission-bsc.html">Bsc</a>
+          <a href="admission-pb.html">PB.Bsc</a>
+        </div>
+      </div>
+  
+
+      <!-- Facilities -->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Facilities</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="library.html">Library</a>
+          <a href="fundamental-lab.html">Labs</a>
+          <a href="classroom.html">Classroom</a>
+          <a href="bus.html">Bus Facilities</a>
+          <a href="hostel.html">Hostel</a>
+          <a href="parent-hoapitL.html">Parent-Hospital</a>
+        </div>
+      </div>
+
+       <!--Student Support-->
+       <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Student Support</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="anti-rag.html">Anti-Ragging Committee </a>
+          <a href="discipline.html">Disciplinary Committee</a>
+          <a href="internal-complains.html">Internal Complaints Committee</a>
+          <a href="employ.html">Employee Grievance Redressal Committee</a>
+        </div>
+      </div>
+
+
+
+      <a href="gallery.html">Gallery</a>
+      <a href="#">IQAC</a>
+
+
+      <!--IMP Links-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">IMP Link</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="https://www.muhs.ac.in/">MUHS </a>
+          <a href="https://maharashtranursingcouncil.org/">Maharashtra Nursing Council</a>
+        </div>
+      </div>
+
+
+      <!--MUHS-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">MUHS Mandate</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="2026-2027.html">2026-2027</a>
+          <a href="2025-2026.html">2025-2026</a>
+          <a href="2024.html">2024-2025</a>
+        </div>
+      </div>
+
+
+
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <h1>Department of Child Health Nursing</h1>
+  </section>
+
+  <section class="child-health-nursing" style="background-color: #f9fbff; padding: 40px 20px; font-family: 'Segoe UI', sans-serif;">
+    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto; align-items: center;">
+  
+      <!-- Image and HOD Info -->
+      <div class="image-side" style="flex: 1 1 350px; max-width: 350px; text-align: center; margin-bottom: 30px;">
+        <img src="rajat-2.png" alt="HOD Photo" style="width: 100%; height: 500px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <h3 style="margin-top: 15px; font-size: 1.2em; color: #004080;">Mr.Rajat P.Vaidya</h3>
+        <p style="color: #333; font-weight: bold;">Head of Department</p>
+      </div>
+  
+      <!-- Text Content -->
+      <div class="text-side" style="flex: 1 1 60%; padding-left: 30px;">
+        <h2 style="font-size: 2.5em; color: #004080; margin-bottom: 20px;">👶 Child Health Nursing</h2>
+  
+        <h3 style="color: #0066cc; margin-top: 20px;">📘 Introduction:</h3>
+        <p style="line-height: 1.7; color: #333;">The department is concerned with teaching and training student nurses for the delivery of health services to children through preventive, promotive, restorative and rehabilitative services. The purpose of this department is to prepare the students to identify the normal growth and development; needs/problems of children of various age groups and deviations from normal; recognise the basic concepts, principles and techniques of child care and the role of family in child caring. The department functions effectively under the guidance and supervision of experienced faculty, a well-equipped laboratory and the best clinical exposure facilities. Considering each child and family as a unit of society, the department follows quality and continuous improvement in the field of education, research, thereby ensuring continuous professional growth.</p>
+  
+        <h3 style="color: #0066cc; margin-top: 20px;">🎯 Vision:</h3>
+        <p style="line-height: 1.7; color: #333;">The vision of the child health nursing department is to develop an understanding of the modern concept of child care, utilise the latest trends in caring for children and train the students to provide high-technology nursing care to children from neonates to adolescents.</p>
+  
+        <h3 style="color: #0066cc; margin-top: 20px;">🎯 Mission:</h3>
+        <ul style="color: #333; padding-left: 20px;">
+          <li>• Prepare students to assume responsibilities as competent nurses in providing promotive, preventive, curative and rehabilitative services for the children of various age groups</li>
+          <li>• Quality education through innovative methods for the provision of family-centred child health nursing care through competent nurse professionals with academic excellence</li>
+          <li>• Foster an academic climate favourable for research and professional development</li>
+          <li>• Monitor continuous quality improvement of all functional areas of the department</li>
+        </ul>
+  
+        <h3 style="color: #0066cc; margin-top: 20px;">🎯 Objectives:</h3>
+        <ul style="color: #333; padding-left: 20px;">
+          <li>• To identify the difference between adult and child in care, approach and treatment</li>
+          <li>• To provide care for children with special consideration to growth, development and maturity</li>
+          <li>• To analyse the importance of the prevention of illness and the remedial measures towards the same</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Footer -->
+  <footer class="combined-footer">
+    <div class="footer-logo">
+      <img src="Logo.jpg" alt="Dr. R.N. Lahoti College of Nursing Logo">
+    </div>
+  
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Dr. R.N. Lahoti College of Nursing</h3>
+        <p>Empowering future healthcare heroes through excellence in nursing education and compassionate care.</p>
+      </div>
+  
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Admissions</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Departments</a></li>
+          <li><a href="#">Student Support</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><strong>Address:</strong> Jalna Road, Sultanpur,<br>
+        Lonar (Tq), <br>Buldhana 443 302</p><br>
+        <p><strong>Email:</strong> drnlbscnursing@gmail.com</p><br>
+        <p><strong>Phone:</strong> +91 9071718888</p>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 Dr. R.N. Lahoti College of Nursing. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
