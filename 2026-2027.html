@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MUHS Mandate 2026-2027</title>
+  <style>
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+p {
+      text-align: justify;
+    }
+
+header {
+  background-color: #274bc1;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+main {
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Logo Section */
+.logo-container {
+    text-align: center;
+    background-color:#274bc1;
+    padding: 30px 0;
+  }
+  
+  .logo {
+    font-size: 2rem;
+    color:#f8f9fa;
+    font-weight: bold;
+  }
+  
+/* NAVBAR CONTAINER */
+.navbar {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 1rem 1.5rem;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* BRAND */
+.navbar .brand {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* HAMBURGER ICON */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* NAV LINKS (Single Row) */
+.nav-links {
+  display: flex;
+  /* gap: 1rem; */
+  align-items: center;
+}
+
+.nav-links a,
+.nav-links .dropdown > button {
+  color: white;
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Hover effect */
+.nav-links a:hover,
+.nav-links .dropdown > button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  color: black;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: black;
+  transition: background 0.2s;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Arrow */
+.dropdown > button::after {
+  content: ' ▼';
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background-color: #1e3a8a;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    padding: 1rem 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a,
+  .nav-links .dropdown > button {
+    width: 100%;
+    text-align: left;
+    justify-content: space-between;
+    padding: 12px 1.5rem;
+  }
+
+  .dropdown-content {
+    position: static;
+    background-color: #f1f1f1;
+    box-shadow: none;
+    border-radius: 0;
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    color: #1e3a8a;
+  }
+}
+
+.combined-footer {
+    background-color: #0F52BA;
+    color: #fff;
+    padding: 40px 20px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+  }
+  
+  .footer-logo img {
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    text-align: left;
+  }
+  
+  .footer-about,
+  .footer-links,
+  .footer-contact {
+    flex: 1 1 250px;
+    min-width: 220px;
+  }
+  
+  .footer h3,
+  .footer h4 {
+    color: #fff;
+    margin-bottom: 15px;
+  }
+  
+  .footer p,
+  .footer li,
+  .footer a {
+    font-size: 0.95rem;
+    color: #f1f1f1;
+    line-height: 1.6;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links ul li a:hover {
+    color: #ffd700;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #ccc;
+    padding-top: 15px;
+    font-size: 0.85rem;
+  }
+  
+  /* 🔄 Responsive for mobile devices */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-about,
+    .footer-links,
+    .footer-contact {
+      flex: 1 1 100%;
+      margin-bottom: 20px;
+    }
+  
+    .footer-logo img {
+      height: 80px;
+    }
+  }
+  
+
+
+.card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #1e3a8a;
+  margin-bottom: 2rem;
+}
+
+.card h2 {
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #1e3a8a;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background-color: #274bc1;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+th,
+td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+th {
+  background-color: #1e3a8a;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Reduce width for Sr. No. and PDF columns */
+table td:first-child,
+table th:first-child {
+  width: 60px;
+  text-align: center;
+}
+
+table td:last-child,
+table th:last-child {
+  width: 100px;
+  text-align: center;
+}
+
+/* Responsive styles for table */
+@media (max-width: 768px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ddd;
+    padding: 0.5rem 0;
+  }
+
+  td {
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    width: 45%;
+    padding-left: 0.5rem;
+    font-weight: bold;
+    text-align: left;
+    white-space: nowrap;
+  }
+}
+
+  </style>
+</head>
+<body>
+     <!-- Logo Section -->
+  <div class="logo-container">
+    <div class="logo">Dr. R.N. Lahoti College of Nursing</div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="aboutus.html">About Us</a>
+
+      <!--Course-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Courses</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="BSC.html">BSC Nursing</a>
+          <a href="PBSC.html">PBBSC Nursing</a>
+        </div>
+      </div>
+
+      <!-- Department -->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('department')">Department</button>
+        <div class="dropdown-content" id="department">
+          <a href="child-health-nursing.html">Child-health-nursing</a>
+          <a href="community-nursing.html">Community Health Nursing</a>
+          <a href="medical-nursing.html">Medical Surgical Nursing</a>
+          <a href="OBG.html">OBG Nursing</a>
+          <a href="mental-health.html">Mental Health Nursing</a>
+          
+        </div>
+      </div>
+
+      <!-- Admission -->
+     
+      <div class="dropdown">
+        <button onclick="toggleDropdown('admission')">Admission</button>
+        <div class="dropdown-content" id="admission">
+          <a href="admission-bsc.html">Bsc</a>
+          <a href="admission-pb.html">PB.Bsc</a>
+        </div>
+      </div>
+  
+
+      <!-- Facilities -->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Facilities</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="library.html">Library</a>
+          <a href="fundamental-lab.html">Labs</a>
+        </div>
+      </div>
+
+       <!--Student Support-->
+       <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">Student Support</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="anti-rag.html">Anti-Ragging Committee </a>
+          <a href="discipline.html">Disciplinary Committee</a>
+          <a href="internal-complains.html">Internal Complaints Committee</a>
+          <a href="employ.html">Employee Grievance Redressal Committee</a>
+        </div>
+      </div>
+
+
+
+      <a href="gallery.html">Gallery</a>
+      <a href="#">IQAC</a>
+      <a href="#">Important Links</a>
+
+
+      <!--MUHS-->
+      <div class="dropdown">
+        <button onclick="toggleDropdown('facilities')">MUHS Mandate</button>
+        <div class="dropdown-content" id="facilities">
+          <a href="2026-2027.html">2026-2027</a>
+          <a href="2025-2026.html">2025-2026</a>
+          <a href="2024.html">2024-2025</a>
+        </div>
+      </div>
+
+
+
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <header>
+    <h1>MUHS Mandate 2026-2027</h1>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>MUHS Mandate Documents</h2>
+      <p>Below is the list of annexures and their corresponding PDF documents.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Sr. No.</th>
+            <th>Annexure</th>
+            <th>PDF</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example rows, update links & text as needed -->
+          <tr>
+            <td data-label="Sr. No.">1</td>
+            <td data-label="Annexure">Seat-Matrix Chart   -   (Annexure - I)</td>
+            <td data-label="PDF"><a href="New Doc 02-13-2026 15.22 (2).pdf" class="btn" target="_blank">View</a></td>
+          </tr>
+          <tr>
+            <td data-label="Sr. No.">2</td>
+            <td data-label="Annexure">Infrastructure Details   -   (Annexure - II)</td>
+            <td data-label="PDF"><a href="New Doc 02-13-2026 15.47.pdf" class="btn" target="_blank">View</a></td>
+          </tr>
+          <tr>
+            <td data-label="Sr. No.">3</td>
+            <td data-label="Annexure">Trust Deed   -   (Annexure - III)</td>
+            <td data-label="PDF"><a href="New Doc 02-13-2026 16.13.pdf" class="btn" target="_blank">View</a></td>
+          </tr>
+          <tr>
+            <td data-label="Sr. No.">4</td>
+            <td data-label="Annexure">Details Of Library   -   (Annexure - IV)</td>
+            <td data-label="PDF"><a href="New Doc 02-14-2026 12.21.pdf" class="btn" target="_blank">View</a></td>
+          </tr>
+          <tr>
+            <td data-label="Sr. No.">5</td>
+            <td data-label="Annexure">Clinical Material In Hospital   -   (Annexure - V)</td>
+            <td data-label="PDF"><a href="New Doc 02-13-2026 16.35.pdf" class="btn" target="_blank">View</a></td>
+          </tr>
+          <tr>
+            <td data-label="Sr. No.">6</td>
+            <td data-label="Annexure">Teaching Chart   -   (Annexure - VI)</td>
+            <td data-label="PDF"><a href="Document Wed_Feb_25_14_36_35.pdf" class="btn" target="_blank">View</a></td>
+          </tr>
+          <tr>
+            <td data-label="Sr. No.">7</td>
+            <td data-label="Annexure">Approved Teaching List   -   (Annexure - VII)</td>
+            <td data-label="PDF"><a href="Document Wed_Feb_25_14_36_35 (1).pdf" class="btn" target="_blank">View</a></td>
+          </tr>
+          <tr>
+            <td data-label="Sr. No.">8</td>
+            <td data-label="Annexure">External Teacher List   -   (Annexure - VIII)</td>
+            <td data-label="PDF"><a href="New Doc 02-13-2026 17.02.pdf" class="btn" target="_blank">View</a></td>
+          </tr>
+          <tr>
+            <td data-label="Sr. No.">9</td>
+            <td data-label="Annexure">Non Teaching List   -   (Annexure - IX)</td>
+            <td data-label="PDF"><a href="Annexure IX 2026.pdf" class="btn" target="_blank">View</a></td>
+          </tr>
+          <tr>
+            <td data-label="Sr. No.">10</td>
+            <td data-label="Annexure">Webinar/Workshop/CME/Activities/Preform   -   (Annexure - X)</td>
+            <td data-label="PDF"><a href="Annexure -X 2026.pdf" class="btn" target="_blank">View</a></td>
+          </tr>
+          <tr>
+            <td data-label="Sr. No.">11</td>
+            <td data-label="Annexure">Attendance Details/Research Details/Welfare Scheme Details   -   (Annexure - XI)</td>
+            <td data-label="PDF"><a href="New Doc 02-14-2026 12.46.pdf" class="btn" target="_blank">View</a></td>
+          </tr>
+          <tr>
+            <td data-label="Sr. No.">12</td>
+            <td data-label="Annexure">AISHE Certificate   -   (Annexure - XII)</td>
+            <td data-label="PDF"><a href="New Doc 02-14-2026 12.54.pdf" class="btn" target="_blank">View</a></td>
+          </tr>
+          <tr>
+            <td data-label="Sr. No.">13</td>
+            <td data-label="Annexure">Subject Wise Eligible Examiners List   -   (Annexure - XIII)</td>
+            <td data-label="PDF"><a href="Document Sat_Feb_14_11_43_19.pdf" class="btn" target="_blank">View</a></td>
+          </tr>
+          <tr>
+            <tr>
+                <td data-label="Sr. No.">13 A</td>
+                <td data-label="Annexure">Subject Wise Eligible Examiners List   -   (Annexure - XIII-A)</td>
+                <td data-label="PDF"><a href="Document Wed_Feb_25_14_36_35 (2).pdf" class="btn" target="_blank">View</a></td>
+              </tr>
+              <tr>
+            <td data-label="Sr. No.">14</td>
+            <td data-label="Annexure">Result Last Three Years   -   (Annexure - XIV)</td>
+            <td data-label="PDF"><a href="Document Wed_Feb_25_14_36_35 (3).pdf" class="btn" target="_blank">View</a></td>
+          </tr>
+          <tr>
+            <td data-label="Sr. No.">15</td>
+            <td data-label="Annexure">Hostel Facility   -   (Annexure - XV)</td>
+            <td data-label="PDF"><a href="Annexure XVI 2026.pdf" class="btn" target="_blank">View</a></td>
+          </tr>
+          <tr>
+            <td data-label="Sr. No.">16</td>
+            <td data-label="Annexure">Declaration   -   (Annexure - XVI)</td>
+            <td data-label="PDF"><a href="Annexure -XVI 2026.pdf" class="btn" target="_blank">View</a></td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <footer class="combined-footer">
+    <div class="footer-logo">
+      <img src="Logo.jpg" alt="Dr. R.N. Lahoti College of Nursing Logo">
+    </div>
+  
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Dr. R.N. Lahoti College of Nursing</h3>
+        <p>Empowering future healthcare heroes through excellence in nursing education and compassionate care.</p>
+      </div>
+  
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Admissions</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Departments</a></li>
+          <li><a href="#">Student Support</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><strong>Address:</strong> Jalna Road, Sultanpur,<br>
+        Lonar (Tq), <br>Buldhana 443 302</p><br>
+        <p><strong>Email:</strong> drnlbscnursing@gmail.com</p><br>
+        <p><strong>Phone:</strong> +91 9071718888</p>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>© 2025 Dr. R.N. Lahoti College of Nursing. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script>
+
+const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+
+  // Fix: Close dropdowns when tapping outside
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".dropdown")) {
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        drop.classList.remove("show-dropdown");
+      });
+    }
+  });
+
+  // Dropdown toggle function
+  function toggleDropdown(id) {
+    const dropdown = document.getElementById(id);
+    const parent = dropdown.parentElement;
+    parent.classList.toggle("show-dropdown");
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".dropdown")) {
+      document.querySelectorAll(".dropdown-content").forEach((el) => {
+        el.classList.remove("show-dropdown");
+      });
+    }
+  });
+
+
+  </script>
+</body>
+</html>
